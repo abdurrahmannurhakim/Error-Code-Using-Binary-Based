@@ -55,7 +55,7 @@ void ErrorCodeClass::deleteErrorCodeList(ErrorCode *head) {
 
 /**
 
- uint8_t readDEcimal;
+ my_typedata_16_t  readDEcimal;
  int parameters[] = {1, 1, 1, 0, 0, 1, 0, 0};
  ErrorCodeClass ErrorCode;
  int main() {
