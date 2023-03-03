@@ -56,15 +56,14 @@ void ErrorCodeClass::deleteErrorCodeList(ErrorCode *head) {
 /**
 
  uint8_t readDEcimal;
- int readBit;
  int parameters[] = {1, 1, 1, 0, 0, 1, 0, 0};
  ErrorCodeClass ErrorCode;
  int main() {
 
  struct ErrorCode* head = createErrorCodeList(parameters);
- ErrorCode.ReadErrorCode(head, &readHEX);
+ ErrorCode.ReadErrorCode(head, &readDEcimal);
  ErrorCode.deleteErrorCodeList(head); //free
- printf("%d", readHEX);
+ printf("%d", readDEcimal);
  return 0;
  }
 
