@@ -32,7 +32,7 @@ typedef enum {
 struct ErrorCode {
 	my_typedata_16_t hexValue;
 	int isError;
-        ErrorCode* next;
+        struct ErrorCode* next;
 };
 
 class ErrorCodeClass {
