@@ -7,18 +7,19 @@
 //============================================================================
 
 #include "Error_Code.h"
+my_typedata_16_t Value_16_bit;
 
 ErrorCodeClass::ErrorCodeClass() {
 }
 
-ErrorCode* ErrorCodeClass::createErrorCodeList(int parameters[]) {
-	ErrorCode *head = NULL;
-	ErrorCode *curr = NULL;
-	my_typedata_16_t Value_16_bit;
+struct ErrorCode* ErrorCodeClass::createErrorCodeList(int parameters[]) {
+	struct ErrorCode *head = NULL;
+	struct ErrorCode *curr = NULL;
+
 
 	for (int i = 0; i < SIX_TEEN_BIT; i++) {
 		Value_16_bit |= (parameters[i] << i);
-		ErrorCode *node = new ErrorCode { Value_16_bit, parameters[i], NULL };
+		struct ErrorCode *node = new ErrorCode { Value_16_bit, parameters[i], NULL };
 		if (head == NULL) {
 			head = node;
 			curr = node;
@@ -30,9 +31,9 @@ ErrorCode* ErrorCodeClass::createErrorCodeList(int parameters[]) {
 	return head;
 }
 
-void ErrorCodeClass::ReadErrorCode(ErrorCode *head,
+void ErrorCodeClass::ReadErrorCode(struct ErrorCode *head,
 		my_typedata_16_t *OutputHEXValue) {
-	ErrorCode *curr = head;
+	struct ErrorCode *curr = head;
 	while (curr != NULL) {
 		*OutputHEXValue = curr->hexValue;
 		curr = curr->next;
