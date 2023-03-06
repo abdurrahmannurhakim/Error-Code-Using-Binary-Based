@@ -46,6 +46,7 @@ void ErrorCodeClass::deleteErrorCodeList(ErrorCode *head) {
 	while (curr != NULL) {
 		ErrorCode *temp = curr;
 		curr = curr->next;
+		Value_16_bit = 0; ///reset variable (fixed bug)
 		delete temp;
 	}
 }
