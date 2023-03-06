@@ -32,14 +32,14 @@ typedef enum {
 struct ErrorCode {
 	my_typedata_16_t hexValue;
 	int isError;
-    ErrorCode* next;
+        ErrorCode* next;
 };
 
 class ErrorCodeClass {
 public:
 	ErrorCodeClass();
-	ErrorCode* createErrorCodeList(int parameters[]);
-	void ReadErrorCode(ErrorCode* head, my_typedata_16_t *OutputValue);
+	struct ErrorCode* createErrorCodeList(int parameters[]);
+	void ReadErrorCode(struct ErrorCode* head, my_typedata_16_t *OutputValue);
 	void deleteErrorCodeList(ErrorCode* head); ///it seems like free() in linkedlist
 };
 
